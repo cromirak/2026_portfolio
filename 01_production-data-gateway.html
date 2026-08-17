@@ -32,6 +32,7 @@
   }
   .mono{ font-family:"SF Mono","Consolas","Monaco",monospace; }
 
+  /* Header */
   .header{
     display:flex;
     justify-content:space-between;
@@ -67,6 +68,7 @@
     background:var(--tag-bg);color:var(--tag-ink);white-space:nowrap;
   }
 
+  /* Section header */
   section{ margin-bottom:11px; }
   h2{
     font-size:13px;
@@ -80,6 +82,7 @@
     margin:0 0 10px 0;
   }
 
+  /* Stats */
   .stats-row{
     display:flex; gap:0; margin-bottom:18px;
     border-top:1px solid var(--line); border-bottom:1px solid var(--line);
@@ -91,6 +94,7 @@
   .stat-val{ font-size:19px; font-weight:800; color:var(--accent); font-variant-numeric:tabular-nums; }
   .stat-key{ font-size:10.5px; color:var(--ink-soft); margin-top:2px; }
 
+  /* Diagram */
   .diag-wrap{
     background:var(--accent-soft);
     border:1px solid var(--line);
@@ -99,6 +103,7 @@
     margin-bottom:12px;
   }
 
+  /* Feature grid */
   .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 20px;}
   .feat{padding:6px 0;border-bottom:1px dashed var(--line);}
   .feat-title{font-size:12px;font-weight:800;color:var(--ink);margin-bottom:3px;}
@@ -110,6 +115,7 @@
     font-size:11px; padding:3px 9px; border-radius:11px; font-weight:600;
   }
 
+  /* Table */
   .odm-table{width:100%;border-collapse:collapse;font-size:11.5px;}
   .odm-table th{
     text-align:left;color:var(--ink-soft);font-weight:700;font-size:10.5px;letter-spacing:.3px;
@@ -161,6 +167,7 @@
           </marker>
         </defs>
 
+        <!-- Left: input channels -->
         <rect x="10" y="16" width="168" height="52" rx="5" fill="#ffffff" stroke="#dde3ea"/>
         <text x="94" y="37" fill="#1c2430" font-size="11" text-anchor="middle" font-weight="700">사내 등록 시스템 연동</text>
         <text x="94" y="53" fill="#4a5568" font-size="8.5" text-anchor="middle">자동 업로드 · 배치 처리</text>
@@ -177,6 +184,7 @@
         <text x="94" y="235" fill="#1c2430" font-size="11" text-anchor="middle" font-weight="700">OEM/ODM 전용 연동</text>
         <text x="94" y="251" fill="#4a5568" font-size="8.5" text-anchor="middle">협력사별 포맷 분리 처리</text>
 
+        <!-- Center: processing pipeline -->
         <rect x="270" y="16" width="220" height="250" rx="10" fill="#ffffff" stroke="#2c5f6f" stroke-width="1.6"/>
         <rect x="355" y="26" width="50" height="6" rx="3" fill="#dde3ea"/>
         <text x="380" y="66" fill="#2c5f6f" font-size="14" text-anchor="middle" font-weight="800">등록 처리 파이프라인</text>
@@ -189,6 +197,7 @@
         <rect x="325" y="236" width="110" height="18" rx="4" fill="#eef2f5" stroke="#dde3ea"/>
         <text x="380" y="248" fill="#4a5568" font-size="8" text-anchor="middle">메시지 큐 기반 비동기 처리</text>
 
+        <!-- Right: outputs -->
         <rect x="582" y="16" width="308" height="72" rx="5" fill="#ffffff" stroke="#2c5f6f" stroke-width="1.3"/>
         <text x="602" y="42" fill="#2c5f6f" font-size="11" font-weight="800">다중 환경 동시 배포</text>
         <text x="602" y="60" fill="#4a5568" font-size="8.5">격리된 운영 환경 3종에 동시 발행</text>
@@ -201,11 +210,13 @@
         <text x="602" y="226" fill="#1c2430" font-size="11" font-weight="700">실시간 알림</text>
         <text x="602" y="244" fill="#4a5568" font-size="8.5">이상 발생 시 담당자 자동 통보</text>
 
+        <!-- Arrows: inputs -> pipeline -->
         <path d="M178,42 H270" fill="none" stroke="#4a5568" stroke-width="1.3" marker-end="url(#ar1)"/>
         <path d="M178,108 H270" fill="none" stroke="#4a5568" stroke-width="1.3" marker-end="url(#ar1)"/>
         <path d="M178,174 H270" fill="none" stroke="#4a5568" stroke-width="1.3" marker-end="url(#ar1)"/>
         <path d="M178,240 H270" fill="none" stroke="#4a5568" stroke-width="1.1" stroke-dasharray="3,3" opacity=".6" marker-end="url(#ar1)"/>
 
+        <!-- Arrows: pipeline -> outputs -->
         <path d="M490,52 H582" fill="none" stroke="#2c5f6f" stroke-width="1.3" marker-end="url(#arA1)"/>
         <path d="M490,144 H582" fill="none" stroke="#4a5568" stroke-width="1.3" marker-end="url(#ar1)"/>
         <path d="M490,236 H582" fill="none" stroke="#4a5568" stroke-width="1.3" marker-end="url(#ar1)"/>
@@ -218,6 +229,10 @@
   <section>
     <h2>핵심 기능</h2>
     <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-title">기존 문제 해결: 수동 프로세스 → 자동 파이프라인</div>
+        <div class="feat-desc">기존엔 담당자가 DB에 직접 INSERT문을 실행해 제품정보를 등록하던 방식 → 검증 없는 수동 SQL 실행에 따른 데이터 정합성 리스크를 제거하고, 자동 검증·이력 분류·실시간 알림을 갖춘 파이프라인으로 전환</div>
+      </div>
       <div class="feat">
         <div class="feat-title">채널별 독립 등록 파이프라인</div>
         <div class="feat-desc">국내 생산관리 시스템 자동 연동 / 해외·외부 협력사 이메일 자동 수신 / 관리자 포털 수동 엑셀 업로드 3개 채널을 하나의 파이프라인으로 통합</div>

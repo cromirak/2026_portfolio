@@ -32,6 +32,7 @@
   }
   .mono{ font-family:"SF Mono","Consolas","Monaco",monospace; }
 
+  /* Header */
   .header{
     display:flex;
     justify-content:space-between;
@@ -67,6 +68,7 @@
     background:var(--tag-bg);color:var(--tag-ink);white-space:nowrap;
   }
 
+  /* Section header */
   section{ margin-bottom:11px; }
   h2{
     font-size:13px;
@@ -80,6 +82,7 @@
     margin:0 0 10px 0;
   }
 
+  /* Stats */
   .stats-row{
     display:flex; gap:0; margin-bottom:12px;
     border-top:1px solid var(--line); border-bottom:1px solid var(--line);
@@ -91,6 +94,7 @@
   .stat-val{ font-size:19px; font-weight:800; color:var(--accent); font-variant-numeric:tabular-nums; }
   .stat-key{ font-size:10.5px; color:var(--ink-soft); margin-top:2px; }
 
+  /* Diagram */
   .diag-wrap{
     background:var(--accent-soft);
     border:1px solid var(--line);
@@ -99,6 +103,7 @@
     margin-bottom:12px;
   }
 
+  /* Feature grid */
   .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 20px;}
   .feat{padding:6px 0;border-bottom:1px dashed var(--line);}
   .feat-title{font-size:12px;font-weight:800;color:var(--ink);margin-bottom:3px;}
@@ -151,13 +156,16 @@
           </marker>
         </defs>
 
+        <!-- Scheduler badge -->
         <rect x="10" y="10" width="180" height="30" rx="5" fill="#ffffff" stroke="#2c5f6f" stroke-width="1.2"/>
         <text x="100" y="29" fill="#2c5f6f" font-size="11" text-anchor="middle" font-weight="700">매일 정해진 시각에 자동 실행</text>
 
+        <!-- SFTP -->
         <rect x="10" y="90" width="150" height="50" rx="5" fill="#ffffff" stroke="#dde3ea"/>
         <text x="85" y="112" fill="#1c2430" font-size="11" text-anchor="middle" font-weight="700">SFTP</text>
         <text x="85" y="127" fill="#4a5568" font-size="8.5" text-anchor="middle">공장등록 CSV 3종</text>
 
+        <!-- FastAPI center -->
         <rect x="230" y="48" width="220" height="204" rx="7" fill="#ffffff" stroke="#2c5f6f" stroke-width="1.6"/>
         <text x="340" y="80" fill="#2c5f6f" font-size="13" text-anchor="middle" font-weight="800">FastAPI</text>
         <text x="340" y="97" fill="#4a5568" font-size="9" text-anchor="middle">Device Data Hub API</text>
@@ -169,26 +177,32 @@
         <text x="340" y="194" fill="#1c2430" font-size="8.5" text-anchor="middle">CSV / Excel 추출</text>
         <text x="340" y="230" fill="#4a5568" font-size="8" text-anchor="middle">Swagger · ReDoc 문서 제공</text>
 
+        <!-- PG 국내 -->
         <rect x="500" y="20" width="390" height="48" rx="5" fill="#ffffff" stroke="#2c5f6f" stroke-width="1.3"/>
         <text x="520" y="42" fill="#2c5f6f" font-size="11" font-weight="800">PostgreSQL · 국내</text>
         <text x="520" y="58" fill="#4a5568" font-size="8.5">국내 리전 (dev · verify · prod)</text>
 
+        <!-- PG 해외 -->
         <rect x="500" y="80" width="390" height="48" rx="5" fill="#ffffff" stroke="#2c5f6f" stroke-width="1.3"/>
         <text x="520" y="102" fill="#2c5f6f" font-size="11" font-weight="800">PostgreSQL · 해외</text>
         <text x="520" y="118" fill="#4a5568" font-size="8.5">해외 리전 (dev · verify · prod)</text>
 
+        <!-- DynamoDB -->
         <rect x="500" y="140" width="390" height="42" rx="5" fill="#ffffff" stroke="#dde3ea"/>
         <text x="520" y="160" fill="#1c2430" font-size="11" font-weight="700">DynamoDB</text>
         <text x="520" y="175" fill="#4a5568" font-size="8.5">IoT 이벤트 · 프로토콜 데이터</text>
 
+        <!-- Drive -->
         <rect x="500" y="196" width="188" height="42" rx="5" fill="#ffffff" stroke="#dde3ea"/>
         <text x="594" y="216" fill="#1c2430" font-size="10.5" text-anchor="middle" font-weight="700">Google Drive</text>
         <text x="594" y="230" fill="#4a5568" font-size="8" text-anchor="middle">CSV · 보고서 업로드</text>
 
+        <!-- Email -->
         <rect x="702" y="196" width="188" height="42" rx="5" fill="#ffffff" stroke="#dde3ea"/>
         <text x="796" y="216" fill="#1c2430" font-size="10.5" text-anchor="middle" font-weight="700">Email</text>
         <text x="796" y="230" fill="#4a5568" font-size="8" text-anchor="middle">HTML 일일 보고서</text>
 
+        <!-- Arrows -->
         <path d="M100,40 V44 H340 V48" fill="none" stroke="#2c5f6f" stroke-width="1.2" stroke-dasharray="3,3" marker-end="url(#arA2)"/>
         <path d="M160,115 H230" fill="none" stroke="#4a5568" stroke-width="1.3" marker-end="url(#ar2)"/>
 
@@ -208,8 +222,8 @@
     <h2>핵심 기능</h2>
     <div class="feat-grid">
       <div class="feat">
-        <div class="feat-title">일일 보고서 자동화</div>
-        <div class="feat-desc">SFTP 공장 CSV 다운로드 → S/N·MAC 유효성 검사 → DB 통계 집계(국내+해외 리전) → HTML 이메일 자동 발송. 다단계 파이프라인 완전 자동화</div>
+        <div class="feat-title">일일 운영 보고서 신규 기획·구축</div>
+        <div class="feat-desc">기존에 부재했던 보고서 프로세스를 처음부터 설계. SFTP 공장 CSV 다운로드 → S/N·MAC 유효성 검사 → DB 통계 집계(국내+해외 리전) → HTML 이메일 자동 발송까지 완전 자동화</div>
       </div>
       <div class="feat">
         <div class="feat-title">멀티 리전 PostgreSQL 연동</div>
