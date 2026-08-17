@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>노창현 - 포트폴리오</title>
+<style>
+  :root{
+    --ink:#1c2430;
+    --ink-soft:#4a5568;
+    --line:#dde3ea;
+    --accent:#2c5f6f;
+    --accent-soft:#e8f1f2;
+    --paper:#ffffff;
+    --tag-bg:#eef2f5;
+    --tag-ink:#3a4657;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0;padding:0;
+    background:#f7f9fa;
+    color:var(--ink);
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:48px 24px 80px;
+  }
+  header{
+    border-bottom:3px solid var(--ink);
+    padding-bottom:16px;
+    margin-bottom:32px;
+  }
+  header .eyebrow{
+    font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;
+  }
+  header h1{
+    margin:0;
+    font-size:32px;
+    font-weight:800;
+    letter-spacing:-0.5px;
+  }
+  header .role{
+    margin-top:6px;
+    font-size:14px;
+    color:var(--accent);
+    font-weight:600;
+  }
+  header .desc{
+    margin-top:12px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.7;
+    max-width:600px;
+  }
+  .card-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  a.card{
+    display:block;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:20px 22px;
+    text-decoration:none;
+    color:inherit;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  a.card:hover{
+    border-color:var(--accent);
+    box-shadow:0 2px 10px rgba(44,95,111,0.08);
+  }
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:6px;
+  }
+  .card-title{
+    font-size:16px;
+    font-weight:800;
+    color:var(--ink);
+  }
+  .card-badge{
+    font-size:10.5px;
+    font-weight:700;
+    padding:3px 9px;
+    border-radius:3px;
+    background:var(--tag-bg);
+    color:var(--tag-ink);
+    white-space:nowrap;
+  }
+  .card-badge.side{
+    background:var(--ink);
+    color:#fff;
+  }
+  .card-desc{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    line-height:1.6;
+    margin-bottom:10px;
+  }
+  .card-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+  }
+  .tag{
+    background:var(--tag-bg);
+    color:var(--tag-ink);
+    font-size:10.5px;
+    padding:2px 8px;
+    border-radius:10px;
+    font-weight:600;
+  }
+  footer{
+    margin-top:40px;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Portfolio</div>
+    <h1>노창현</h1>
+    <div class="role">Backend · Cloud Developer</div>
+    <div class="desc">통신·금융·에너지·제조·IoT 등 다양한 산업군에서 15년간 서버 시스템을 설계·구축해온 백엔드 개발자입니다. 아래는 최근 IoT 플랫폼 팀에서 수행한 주요 프로젝트와 개인 학습 사이드 프로젝트입니다.</div>
+  </header>
+
+  <div class="card-list">
+    <a class="card" href="01_production-data-gateway.html">
+      <div class="card-top">
+        <div class="card-title">Production Data Gateway</div>
+        <div class="card-badge">Java · Spring Boot</div>
+      </div>
+      <div class="card-desc">공장 생산정보 등록 API — 국내 공장·해외/외부 협력사·ODM 파트너의 출하 등록을 하나의 AWS 서버리스 파이프라인으로 통합 처리. GitHub Actions + ArgoCD 기반 GitOps 배포.</div>
+      <div class="card-tags">
+        <span class="tag">AWS Lambda</span><span class="tag">SQS FIFO</span><span class="tag">EKS</span><span class="tag">ArgoCD</span>
+      </div>
+    </a>
+
+    <a class="card" href="02_device-data-hub-api.html">
+      <div class="card-top">
+        <div class="card-title">Device Data Hub API</div>
+        <div class="card-badge">Python · FastAPI</div>
+      </div>
+      <div class="card-desc">IoT 데이터 서비스 API — 공장 생산 이력 집계, 일일 보고서 자동 발송, 현장 자산관리 앱 연동 데이터 추출을 담당하는 IoT 운영 백오피스의 핵심 엔진.</div>
+      <div class="card-tags">
+        <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">DynamoDB</span><span class="tag">Multi-Region</span>
+      </div>
+    </a>
+
+    <a class="card" href="03_iot-asset-ops.html">
+      <div class="card-top">
+        <div class="card-title">IoT Asset Ops</div>
+        <div class="card-badge">Flutter · Android</div>
+      </div>
+      <div class="card-desc">QR/바코드 스캔 기반의 IoT 시료 자산 입고·대여·이동·폐기 관리 앱. Google Sheets와 실시간 연동.</div>
+      <div class="card-tags">
+        <span class="tag">Flutter</span><span class="tag">SQLite</span><span class="tag">Google Sheets API</span>
+      </div>
+    </a>
+
+    <a class="card" href="04_smart-factory-pipeline.html">
+      <div class="card-top">
+        <div class="card-title">Smart Factory Data Pipeline</div>
+        <div class="card-badge side">Side Project · 학습용</div>
+      </div>
+      <div class="card-desc">PLC 센서 데이터를 MQTT로 수집해 실시간 집계·이상 탐지·모니터링까지 구현해본 개인 학습 프로젝트. QoS 불일치 버그를 직접 발견·수정.</div>
+      <div class="card-tags">
+        <span class="tag">MQTT</span><span class="tag">TimescaleDB</span><span class="tag">Grafana</span><span class="tag">Docker</span>
+      </div>
+    </a>
+  </div>
+
+  <footer>© 노창현 · Backend / Cloud Developer</footer>
+
+</div>
+</body>
+</html>
